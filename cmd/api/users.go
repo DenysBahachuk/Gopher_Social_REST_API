@@ -1,7 +1,6 @@
 package main
 
 import (
-	"context"
 	"errors"
 	"net/http"
 	"strconv"
@@ -164,31 +163,31 @@ func (app *application) activateUserHandler(w http.ResponseWriter, r *http.Reque
 	}
 }
 
-func (app *application) userContextModdleware(next http.Handler) http.Handler {
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		userIdAsString := chi.URLParam(r, "userId")
-		userId, err := strconv.ParseInt(userIdAsString, 10, 64)
-		if err != nil {
-			app.badRequestErrorResponse(w, r, err)
-			return
-		}
+// func (app *application) userContextModdleware(next http.Handler) http.Handler {
+// 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+// 		userIdAsString := chi.URLParam(r, "userId")
+// 		userId, err := strconv.ParseInt(userIdAsString, 10, 64)
+// 		if err != nil {
+// 			app.badRequestErrorResponse(w, r, err)
+// 			return
+// 		}
 
-		user, err := app.store.Users.GetById(r.Context(), userId)
-		if err != nil {
-			switch {
-			case errors.Is(err, store.ErrNotFound):
-				app.notFoundErrorResponse(w, r, err)
-			default:
-				app.internalServerErrorResponse(w, r, err)
-			}
-			return
-		}
+// 		user, err := app.store.Users.GetById(r.Context(), userId)
+// 		if err != nil {
+// 			switch {
+// 			case errors.Is(err, store.ErrNotFound):
+// 				app.notFoundErrorResponse(w, r, err)
+// 			default:
+// 				app.internalServerErrorResponse(w, r, err)
+// 			}
+// 			return
+// 		}
 
-		ctx := context.WithValue(r.Context(), userKey, user)
+// 		ctx := context.WithValue(r.Context(), userKey, user)
 
-		next.ServeHTTP(w, r.WithContext(ctx))
-	})
-}
+// 		next.ServeHTTP(w, r.WithContext(ctx))
+// 	})
+// }
 
 func (app *application) getUserFromContext(r *http.Request) *store.User {
 	return r.Context().Value(userKey).(*store.User)
