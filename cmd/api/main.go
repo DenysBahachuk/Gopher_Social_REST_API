@@ -18,6 +18,8 @@ import (
 	"go.uber.org/zap"
 )
 
+const version = "0.1.1"
+
 //	@title			GopherSocial API
 //	@description	Simple social network
 //	@termsOfService	http://swagger.io/terms/

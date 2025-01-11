@@ -25,8 +25,6 @@ import (
 	"go.uber.org/zap"
 )
 
-const version = "0.1.1"
-
 type application struct {
 	config        config
 	store         store.Storage
