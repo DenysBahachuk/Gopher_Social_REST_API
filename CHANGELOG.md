@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/DenysBahachuk/Gopher_Social_REST_API/compare/v1.0.0...v1.0.1) (2025-01-11)
+
+
+### Bug Fixes
+
+* change of the version ([a5a7959](https://github.com/DenysBahachuk/Gopher_Social_REST_API/commit/a5a7959dcd968695564ccdfdb91c9024c111a076))
+
 ## 1.0.0 (2025-01-11)
 
 
