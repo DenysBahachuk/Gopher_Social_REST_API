@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/DenysBahachuk/Gopher_Social_REST_API/compare/v1.0.1...v1.1.0) (2025-01-11)
+
+
+### Features
+
+* update api version automatically ([cfd2e4d](https://github.com/DenysBahachuk/Gopher_Social_REST_API/commit/cfd2e4d0ffeda3cef648693c76cae8a25b1aba13))
+
 ## [1.0.1](https://github.com/DenysBahachuk/Gopher_Social_REST_API/compare/v1.0.0...v1.0.1) (2025-01-11)
 
 
